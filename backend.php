@@ -22,11 +22,7 @@ switch($act){
 					<div class="row">&nbsp;</div>
 					
 					
-					<div class="row">
-					   <div class="col-md-12">
-						  <input type="submit" class="btn btn-primary" value="Download" onclick="downloadvideo();" />
-					   </div>
-					</div>
+
 				</div>
 			
 				<div class="col-md-6">
@@ -36,6 +32,8 @@ switch($act){
 			
   
 			<input type="hidden" id="filename" value="<?=$info->filename;?>" />
+			
+			<script>downloadvideo();</script>
 
 		
 			<?php
