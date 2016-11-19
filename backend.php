@@ -96,5 +96,9 @@ class videoinfo{
 }
 
 function addtodb($filename){
-	//todo
+	$fpath = "files.txt";
+	$files = file_get_contents($fpath);
+	$files = json_decode($files);
+	$files[] = array("$filename",time());
+	file_put_contents($fpath,json_encode($files));
 }
