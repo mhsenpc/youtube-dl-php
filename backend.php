@@ -7,8 +7,16 @@ switch($act){
 	case "getinfo":
 		if(isvalidcsrf($csrf)){
 			$info = getinfo($link);
-			if(empty($info))
-				die("invalid video");
+			if(empty($info->title)){?>
+				<div class="alert alert-warning">
+					<strong>Error!</strong> Your links seems invalid.
+				</div>
+
+			
+			<?php 
+			}
+			else{
+				
 			?>
 		
 			<div class="row">
@@ -33,11 +41,12 @@ switch($act){
   
 			<input type="hidden" id="filename" value="<?=$info->filename;?>" />
 			
+			
 			<script>downloadvideo();</script>
-
 		
 			<?php
-		}
+			}//is valid video
+		}//is valid csrf
 		else
 			echo "Invalid request.";
 		break;
