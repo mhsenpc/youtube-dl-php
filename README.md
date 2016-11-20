@@ -19,3 +19,7 @@ youtube-dl-php - download videos from youtube.com or other video platforms by a 
   mount /files.img /mnt/files -o loop=/dev/loop0
 ```
 p.s: to make it permanent you should write this in fstab
+
+
+License
+This application is published under MIT license
