@@ -1,7 +1,8 @@
 <?php
 $list = file_get_contents("files.txt");
 $list = json_decode($list);
-$duration = 60 * 60; //1 hour
+$duration = 60 * 60 ; //1 hour
+$duration = $duration * 24; //1 day
 foreach($list as $key=>$item){
 	if(time() - $item[1] >= $duration ){
 		$filepath = __DIR__."/files/".$item[0];
