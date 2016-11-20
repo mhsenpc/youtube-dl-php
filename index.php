@@ -21,6 +21,8 @@
 				  $("#infodiv").html(data);
 				  $("#infoprogressbar").hide();
 				  $("#infodiv").show();
+				  
+					
 
 				});
 				
@@ -72,7 +74,7 @@
          <form id="mainform" action="fake.php">
             <div class="row">
                <div class="col-md-12">
-                  <input id="txtlink" type="text" class="form-control" value="https://www.youtube.com/watch?v=fkkDvKGcNSo" placeholder="ex:https://www.youtube.com/watch?v=fkkDvKGcNSo" />
+                  <input id="txtlink" type="text" class="form-control" placeholder="ex:https://www.youtube.com/watch?v=fkkDvKGcNSo" />
                </div>
             </div>
             <input type="hidden" id="csrf" value="<?php echo newcsrf(); ?>" />
