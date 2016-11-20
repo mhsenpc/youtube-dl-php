@@ -21,5 +21,5 @@ youtube-dl-php - download videos from youtube.com or other video platforms by a 
 p.s: to make it permanent you should write this in fstab
 
 
-License
+# License
 This application is published under MIT license
