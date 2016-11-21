@@ -14,12 +14,15 @@ youtube-dl-php - download videos from youtube.com or other video platforms by a 
 
 # create size limited partition for files directory
 ```
-  dd if=/dev/zero of=/tmp/files.img bs=1024 count=10000
-  mke2fs /files.img
-  mount /files.img /mnt/files -o loop=/dev/loop0
+  dd if=/dev/zero of=files.img bs=1024 count=10000
+  mke2fs files.img
+  mount files.img /mnt/files -o loop=/dev/loop0
 ```
 p.s: to make it permanent you should write this in fstab
 
 
 # License
 This application is published under MIT license
+
+# Live demo
+http://youtube.mp3yab.ir
