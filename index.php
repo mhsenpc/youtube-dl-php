@@ -1,64 +1,4 @@
-<?php require_once("csrf.php"); ?>
-<html>
-   <head>
-      <script src="js/jquery-3.1.1.min.js" ></script>
-      <script src="js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <title>100% free youtube downloader</title>
-      <script>
-		$(document).ready(function (){
-			$( "#mainform" ).submit(function( event ) {
-				event.preventDefault();
-				
-				var link = $("#txtlink").val();
-				var csrf = $("#csrf").val();
-
-				$("#mainform").hide();
-				$("#infoprogressbar").show();
-				
-				$.post( "backend.php", {'act':'getinfo','link':link,'csrf':csrf })
-				.done(function( data ) {
-				  $("#infodiv").html(data);
-				  $("#infoprogressbar").hide();
-				  $("#infodiv").show();
-				  
-					
-
-				});
-				
-			});
-			
-
-		});
-		
-	
-		function downloadvideo(){
-			$("#downloadprogressbar").show();
-			
-			var link = $("#txtlink").val();
-			var csrf = $("#csrf").val();
-			var filename = $("#filename").val();
-			
-			$.post( "backend.php", {'act':'download','link':link,'csrf':csrf,'filename':filename})
-			.done(function( data ) {
-			  $("#downloadprogressbar").hide();
-			  
-			  
-			  if(data == 0){
-				alert("Error in downloading video.");
-			  
-			  }
-			  else
-			  {
-			    //redirect to downloaded address
-				window.location.href = data;
-			  }
-				
-
-			});
-		}
-      </script>
-   </head>
+<?php require_once("header.php"); ?>
    <body>
       <div class="container">
 <a href="https://github.com/mhsenpc/youtube-dl-php"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
@@ -68,7 +8,7 @@
          <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-6">
-               <img src="img/logo.jpg" />
+               <a href="http://www.youtube.mp3yab.ir/"><img src="img/logo.jpg" /></a>
             </div>
          </div>
          <form id="mainform" action="fake.php">
@@ -80,7 +20,7 @@
             <input type="hidden" id="csrf" value="<?php echo newcsrf(); ?>" />
             <div class="row">
                <div class="col-md-12">
-                  <center><input type="submit" class="btn btn-primary" value="Download" /></center>
+                  <center><input type="submit" class="btn btn-primary" value="Download" />&nbsp;<a class="btn btn-default" href="batch.php">Batch</a></center>
                </div>
             </div>
          </form>

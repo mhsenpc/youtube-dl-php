@@ -66,6 +66,19 @@ switch($act){
 			echo "Invalid request.";
 		}
 		break;
+		
+	case "getfilename":
+		if(isvalidcsrf($csrf)){
+			$t= getinfo($link);
+			if(!empty($t->filename))
+				echo $t->filename;
+			else
+				echo "0";
+		}
+		else{
+			echo "0";
+		}
+		break;
 }
 
 
