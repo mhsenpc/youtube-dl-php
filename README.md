@@ -1,5 +1,6 @@
 # youtube-dl-php
-youtube-dl-php - download videos from youtube.com or other video platforms by a php interface
+A web interface for youtube-dl cli program (https://github.com/ytdl-org/youtube-dl)
+download videos from youtube.com or other video platforms by a php interface
 
 # installation
 ```
@@ -7,22 +8,6 @@ youtube-dl-php - download videos from youtube.com or other video platforms by a 
 2- chmod 777 csrf.txt
 ```
 
-# other programs
-- Youtube-dl
-- Bootstrap
-- jquery
-
-# create size limited partition for files directory
-```
-  dd if=/dev/zero of=files.img bs=1024 count=10000
-  mke2fs files.img
-  mount files.img /mnt/files -o loop=/dev/loop0
-```
-p.s: to make it permanent you should write this in fstab
-
 
 # License
 This application is published under MIT license
-
-# Live demo
-http://youtube.mp3yab.ir
